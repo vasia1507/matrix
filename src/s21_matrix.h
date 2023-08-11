@@ -21,7 +21,7 @@ int s21_mult_number(matrix_t *A, double number, matrix_t *result);    // done
 int s21_mult_matrix(matrix_t *A, matrix_t *B, matrix_t *result);      // undone
 int s21_transpose(matrix_t *A, matrix_t *result);                     // done
 int s21_calc_complements(matrix_t *A, matrix_t *result);              // undone
-int s21_determinant(matrix_t *A, double *result);                     // undone
+int s21_determinant(matrix_t *A, double *result);                     // done
 int s21_inverse_matrix(matrix_t *A, matrix_t *result);                // undone
 
 #endif
