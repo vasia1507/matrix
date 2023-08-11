@@ -1,15 +1,12 @@
 #include<stdio.h>
 #include"./s21_matrix.h"
 
-double calc_opredelitel(double** matr, int matr_rows, int matr_columns, double result) {
+double calc_opredelitel(double** matr, int matr_rows, int matr_columns) {
   int i = 0, j = 0, k = 0;
+  double result = 0;
   if (matr_rows == 1) {
     return matr[0][0];
   }
-  if (matr_rows == 2) {
-    return matr[0][0] * matr[1][1] - matr[0][1] * matr[1][0];
-  }
-
   double*** mass_matr = malloc(matr_columns * sizeof(double**));
   for (i = 0; i < matr_columns; i++) {
     mass_matr[i] = malloc((matr_rows - 1) * sizeof(double*));
@@ -17,7 +14,6 @@ double calc_opredelitel(double** matr, int matr_rows, int matr_columns, double r
       mass_matr[i][j] = malloc((matr_columns - 1) * sizeof(double));
     }
   }
-  
   int flag = 0;
   for (i = 0; i < matr_columns; i++) {
     for (j = 0; j < matr_rows - 1; j++) {
@@ -30,17 +26,13 @@ double calc_opredelitel(double** matr, int matr_rows, int matr_columns, double r
       }
     }
   }
-
   for (i = 0; i < matr_columns; i++) {
     if (i % 2 == 0) {
-      result += matr[0][i] * calc_opredelitel(mass_matr[i], matr_rows - 1, matr_columns - 1, result);
-      printf("%lf\n", result);
+      result += matr[0][i] * calc_opredelitel(mass_matr[i], matr_rows - 1, matr_columns - 1);
     } else {
-      result -= matr[0][i] * calc_opredelitel(mass_matr[i], matr_rows - 1, matr_columns - 1, result);
-      printf("%lf\n", result);
+      result += -1 * matr[0][i] * calc_opredelitel(mass_matr[i], matr_rows - 1, matr_columns - 1);
     }
   }
-
   for (i = 0; i < matr_columns; i++) {
     for (j = 0; j < matr_rows - 1; j++) {
       free(mass_matr[i][j]);
@@ -48,7 +40,6 @@ double calc_opredelitel(double** matr, int matr_rows, int matr_columns, double r
     free(mass_matr[i]);
   }
   free(mass_matr);
-
   return result;
 }
 
@@ -75,8 +66,9 @@ int s21_determinant(matrix_t *A, double *result) {
       }
       printf("\n");
     }
+    printf("\n");
 
-    *result = calc_opredelitel(matr, A->rows, A->columns, 0);
+    *result = calc_opredelitel(matr, A->rows, A->columns);
     for (i = 0; i < A->columns; i++) {
       free(matr[i]);
     }
