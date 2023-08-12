@@ -2,10 +2,10 @@
 
 int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
   int i = 0, j = 0, error = 0;
-  if (A->rows <= 0 || A->columns <= 0) {
-    error = 2;
-  } else if (A == NULL) {
+  if (A == NULL) {
     error = 1;
+  } else if (A->rows <= 0 || A->columns <= 0) {
+    error = 2;
   } else {
     if (s21_create_matrix(A->rows, A->columns, result) != 0) {
       error = 2; 

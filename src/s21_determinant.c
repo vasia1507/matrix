@@ -45,10 +45,10 @@ double calc_opredelitel(double** matr, int matr_rows, int matr_columns) {
 
 int s21_determinant(matrix_t *A, double *result) {
   int i = 0, j = 0, error = 0;
-  if (A->rows <= 0 || A->columns <= 0 || A->columns != A->rows) {
-    error = 2;
-  } else if (A == NULL) {
+  if (A == NULL) {
     error = 1;
+  } else if (A->rows <= 0 || A->columns <= 0 || A->columns != A->rows) {
+    error = 2;
   } else {
     double** matr = malloc(A->rows * sizeof(double*));
     for (i = 0; i < A->rows; i++){
