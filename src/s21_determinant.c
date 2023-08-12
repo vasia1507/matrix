@@ -59,15 +59,6 @@ int s21_determinant(matrix_t *A, double *result) {
         matr[i][j] = A->matrix[i][j];
       }
     }
-
-    for (i = 0; i < A->rows; i++) {
-      for (j = 0; j < A->columns; j++) {
-        printf("%lf ", matr[i][j]);
-      }
-      printf("\n");
-    }
-    printf("\n");
-
     *result = calc_opredelitel(matr, A->rows, A->columns);
     for (i = 0; i < A->columns; i++) {
       free(matr[i]);
