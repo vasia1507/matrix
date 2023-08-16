@@ -7,15 +7,17 @@ int s21_mult_number(matrix_t *A, double number, matrix_t *result) {
   } else if (A->rows <= 0 || A->columns <= 0) {
     error = 2;
   } else {
-    if (s21_create_matrix(A->rows, A->columns, result) != 0) {
-      error = 2; 
+    matrix_t tmp;
+    if (s21_create_matrix(A->rows, A->columns, &tmp) != 0) {
+      error = 2;
     } else {
       for (i = 0; i < A->rows; i++) {
         for (j = 0; j < A->columns; j++) {
-          result->matrix[i][j] = A->matrix[i][j] * number;
+          tmp.matrix[i][j] = A->matrix[i][j] * number;
         }
       }
     }
+    *result = tmp;
   }
   return error;
 }

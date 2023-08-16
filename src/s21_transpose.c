@@ -7,15 +7,17 @@ int s21_transpose(matrix_t *A, matrix_t *result) {
   } else if (A == NULL) {
     error = 1;
   } else {
-    if (s21_create_matrix(A->columns, A->rows, result) != 0) {
+    matrix_t tmp;
+    if (s21_create_matrix(A->columns, A->rows, &tmp) != 0) {
       error = 2; 
     } else {
       for (i = 0; i < A->rows; i++) {
         for (j = 0; j < A->columns; j++) {
-          result->matrix[j][i] = A->matrix[i][j];
+          tmp.matrix[j][i] = A->matrix[i][j];
         }
       }
     }
+    *result = tmp;
   }
   return error;
 }
