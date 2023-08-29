@@ -1,4 +1,4 @@
-/*
+
 #include <stdio.h>
 
 #include "./s21_matrix.h"
@@ -27,4 +27,3 @@ int main() {
   s21_remove_matrix(&result);
   return 0;
 }
-*/
