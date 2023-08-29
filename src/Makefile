@@ -1,4 +1,4 @@
-FLAGS = -std=c11 -pedantic
+FLAGS = -Wall -Werror -Wextra -std=c11 -pedantic
 LFLAGS = -lcheck -lm -lpthread
 GCF = -ftest-coverage -fprofile-arcs --coverage
 

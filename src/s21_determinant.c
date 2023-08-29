@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 #include "./s21_matrix.h"
 
 double calc_opredelitel(double** matr, int matr_rows, int matr_columns) {

@@ -29,9 +29,9 @@ double calc_minor(matrix_t *A, int index_i, int index_j) {
 
 int s21_calc_complements(matrix_t *A, matrix_t *result) {
   int i = 0, j = 0, error = 0;
-  if (A == NULL) {
+  if (A == NULL || A->matrix == NULL) {
     error = 1;
-  } else if (A->columns <= 0 || A->rows <= 0 || A->columns != A->rows) {
+  } else if (A->columns <= 1 || A->rows <= 1 || A->columns != A->rows) {
     error = 2;
   } else {
     if (s21_create_matrix(A->rows, A->columns, result) != 0) {
