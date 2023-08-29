@@ -1,56 +1,36 @@
 #include "./test.h"
 
-START_TEST(test_remove_matrix_1) {
-
-}
+START_TEST(test_remove_matrix_1) {}
 END_TEST
 
-START_TEST(test_remove_matrix_2) {
-
-}
+START_TEST(test_remove_matrix_2) {}
 END_TEST
 
-START_TEST(test_remove_matrix_3) {
-
-}
+START_TEST(test_remove_matrix_3) {}
 END_TEST
 
-START_TEST(test_remove_matrix_4) {
-
-}
+START_TEST(test_remove_matrix_4) {}
 END_TEST
 
-START_TEST(test_remove_matrix_5) {
-
-}
+START_TEST(test_remove_matrix_5) {}
 END_TEST
 
-START_TEST(test_remove_matrix_6) {
-
-}
+START_TEST(test_remove_matrix_6) {}
 END_TEST
 
-START_TEST(test_remove_matrix_7) {
-
-}
+START_TEST(test_remove_matrix_7) {}
 END_TEST
 
-START_TEST(test_remove_matrix_8) {
-
-}
+START_TEST(test_remove_matrix_8) {}
 END_TEST
 
-START_TEST(test_remove_matrix_9) {
-
-}
+START_TEST(test_remove_matrix_9) {}
 END_TEST
 
-START_TEST(test_remove_matrix_10) {
-
-}
+START_TEST(test_remove_matrix_10) {}
 END_TEST
 
-Suite *test_remove_matrix(void) {
+Suite *test_s21_remove_matrix(void) {
   Suite *s = suite_create("\033[45m-=s21_remove_matrix=-\033[0m");
   TCase *tc = tcase_create("remove_matrix_tc");
 

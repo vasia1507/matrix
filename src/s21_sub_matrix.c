@@ -1,4 +1,4 @@
-#include"./s21_matrix.h"
+#include "./s21_matrix.h"
 
 int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
   int i = 0, j = 0, error = 0;
@@ -8,7 +8,7 @@ int s21_sub_matrix(matrix_t *A, matrix_t *B, matrix_t *result) {
     error = 2;
   } else {
     if (s21_create_matrix(A->rows, A->columns, result) != 0) {
-      error = 2; 
+      error = 2;
     } else {
       for (i = 0; i < A->rows; i++) {
         for (j = 0; j < A->columns; j++) {

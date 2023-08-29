@@ -1,5 +1,6 @@
-#include<stdio.h>
-#include"./s21_matrix.h"
+#include <stdio.h>
+
+#include "./s21_matrix.h"
 
 double calc_opredelitel(double** matr, int matr_rows, int matr_columns) {
   int i = 0, j = 0, k = 0;
@@ -28,9 +29,11 @@ double calc_opredelitel(double** matr, int matr_rows, int matr_columns) {
   }
   for (i = 0; i < matr_columns; i++) {
     if (i % 2 == 0) {
-      result += matr[0][i] * calc_opredelitel(mass_matr[i], matr_rows - 1, matr_columns - 1);
+      result += matr[0][i] *
+                calc_opredelitel(mass_matr[i], matr_rows - 1, matr_columns - 1);
     } else {
-      result += -1 * matr[0][i] * calc_opredelitel(mass_matr[i], matr_rows - 1, matr_columns - 1);
+      result += -1 * matr[0][i] *
+                calc_opredelitel(mass_matr[i], matr_rows - 1, matr_columns - 1);
     }
   }
   for (i = 0; i < matr_columns; i++) {
@@ -43,7 +46,7 @@ double calc_opredelitel(double** matr, int matr_rows, int matr_columns) {
   return result;
 }
 
-int s21_determinant(matrix_t *A, double *result) {
+int s21_determinant(matrix_t* A, double* result) {
   int i = 0, j = 0, error = 0;
   if (A == NULL) {
     error = 1;
@@ -51,11 +54,11 @@ int s21_determinant(matrix_t *A, double *result) {
     error = 2;
   } else {
     double** matr = malloc(A->rows * sizeof(double*));
-    for (i = 0; i < A->rows; i++){
+    for (i = 0; i < A->rows; i++) {
       matr[i] = malloc(A->columns * sizeof(double));
     }
     for (i = 0; i < A->rows; i++) {
-      for (j = 0; j < A->columns; j++){
+      for (j = 0; j < A->columns; j++) {
         matr[i][j] = A->matrix[i][j];
       }
     }

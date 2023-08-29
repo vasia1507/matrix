@@ -1,9 +1,9 @@
-#include"./s21_matrix.h"
+#include "./s21_matrix.h"
 
 double calc_minor(matrix_t *A, int index_i, int index_j) {
   int i = 0, j = 0, flag1 = 0, flag2 = 0;
   double result = 0;
-  double **tmp = malloc((A->rows - 1) * sizeof(double*));
+  double **tmp = malloc((A->rows - 1) * sizeof(double *));
   for (i = 0; i < A->rows - 1; i++) {
     tmp[i] = malloc((A->columns - 1) * sizeof(double));
   }
@@ -35,7 +35,7 @@ int s21_calc_complements(matrix_t *A, matrix_t *result) {
     error = 2;
   } else {
     if (s21_create_matrix(A->rows, A->columns, result) != 0) {
-      error = 2; 
+      error = 2;
     } else {
       for (i = 0; i < A->rows; i++) {
         for (j = 0; j < A->columns; j++) {

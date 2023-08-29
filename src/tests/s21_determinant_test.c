@@ -1,56 +1,36 @@
 #include "./test.h"
 
-START_TEST(test_determinant_1) {
-
-}
+START_TEST(test_determinant_1) {}
 END_TEST
 
-START_TEST(test_determinant_2) {
-
-}
+START_TEST(test_determinant_2) {}
 END_TEST
 
-START_TEST(test_determinant_3) {
-
-}
+START_TEST(test_determinant_3) {}
 END_TEST
 
-START_TEST(test_determinant_4) {
-
-}
+START_TEST(test_determinant_4) {}
 END_TEST
 
-START_TEST(test_determinant_5) {
-
-}
+START_TEST(test_determinant_5) {}
 END_TEST
 
-START_TEST(test_determinant_6) {
-
-}
+START_TEST(test_determinant_6) {}
 END_TEST
 
-START_TEST(test_determinant_7) {
-
-}
+START_TEST(test_determinant_7) {}
 END_TEST
 
-START_TEST(test_determinant_8) {
-
-}
+START_TEST(test_determinant_8) {}
 END_TEST
 
-START_TEST(test_determinant_9) {
-
-}
+START_TEST(test_determinant_9) {}
 END_TEST
 
-START_TEST(test_determinant_10) {
-
-}
+START_TEST(test_determinant_10) {}
 END_TEST
 
-Suite *test_determinant(void) {
+Suite *test_s21_determinant(void) {
   Suite *s = suite_create("\033[45m-=s21_determinant=-\033[0m");
   TCase *tc = tcase_create("determinant_tc");
 
