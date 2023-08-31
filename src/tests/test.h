@@ -21,3 +21,5 @@ Suite *test_s21_inverse_matrix(void);    // undone
 double get_rand(double min, double max);
 
 #endif
+
+// утечки в inverse

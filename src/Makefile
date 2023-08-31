@@ -8,7 +8,7 @@ clean:
 	rm -rf *gcno *gcda gcov* test *.a *.o report *.out
 
 test:
-	gcc *.c tests/*.c -o test $(LFLAGS)
+	gcc *.c tests/*.c -o test $(LFLAGS) -fsanitize=address
 	./test
 
 s21_matrix.a:
