@@ -21,3 +21,8 @@ int main(void) {
 
   return 0;
 }
+
+double get_rand(double min, double max) {
+  double val = (double)rand() / RAND_MAX;
+  return min + val * (max - min);
+}

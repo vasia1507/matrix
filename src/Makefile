@@ -8,7 +8,7 @@ clean:
 	rm -rf *gcno *gcda gcov* test *.a *.o report *.out
 
 test:
-	gcc *.c tests/*.c -o test $(LFLAGS) -lsubunit
+	gcc *.c tests/*.c -o test $(LFLAGS)
 	./test
 
 s21_matrix.a:

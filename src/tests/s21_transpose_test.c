@@ -1,10 +1,5 @@
 #include "./test.h"
 
-double get_rand(double min, double max) {
-  double val = (double)rand() / RAND_MAX;
-  return min + val * (max - min);
-}
-
 START_TEST(test_transpose_1) {
   matrix_t A, B, R;
   s21_create_matrix(1, 1, &A);
